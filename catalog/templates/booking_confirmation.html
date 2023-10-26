@@ -1,0 +1,13 @@
+{% load static %}
+{% block content %}
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <main>
+        <h1>Thank you, {% client.f_name %} for booking your {% package.package_id %} with us!</h1>
+        <p>Your Appointment has been Scheduled for {% booking.id %}.</p>
+    </main>
+</body>
+#Andrew
+{% endblock %}

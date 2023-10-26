@@ -1,0 +1,91 @@
+{% load static %}
+{% block content %}
+
+    <head>
+        <title>Pixel Perfect Studios | Senior Photo Package</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+              rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="192x192" href="{% static 'android-chrome-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="512x512" href="{% static 'android-chrome-512x512.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'site.webmanifest' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    </head>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="function toggleNav() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+            }
+
+            document.addEventListener('click', function(event) {
+                const nav = document.querySelector('nav');
+                const hamburger = document.getElementById('hamburger');
+
+                // Check if the click is outside both the navigation and the hamburger icon
+                if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+                    nav.classList.remove('active');
+                }
+        })
+        toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span id="logo"><img src="{% static 'index/logo.webp' %}" alt="Pixel Perfect Studios Logo"></span>
+        <div class="cart_view">
+            <a href="{% url 'view_cart' %}">
+                <button class="round-button" style="--round-button-active-color: #ffd234; margin: 0 auto;"
+                        data-translate-value="400%" data-color="orange">
+                    <svg fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2%">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                    </svg>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main style="margin-top: 56px;">
+        <img src="{% static 'package_photos/Seniors_Package_Picture.jpg' %}" width="33%" alt="Senior Photo Package">
+        <div style="display: table-row; margin-left: 62px;">
+            <div class="package_title">
+                <h2>$450</h2>
+                <h2>Senior Portrait Package</h2>
+            </div>
+            <p>Senior year is one of the most monumental parts of your life.
+                It's full of lasts. Last football game, last school dance,
+                last first day of school. To help celebrate this important
+                time in your life, it is important to capture YOU and all
+                that you are during this very special time.</p>
+            <p>So, if you’re looking for the perfect senior shoot, then
+                look no further! This package is perfect for all high school
+                seniors, complete with up to three locations and outfits.
+                This photo shoot will occur in the Omaha-Metro area. </p>
+            <h3>This package includes:</h3>
+                <ul>
+                    <li>2.5 hours of shooting with 1-3 locations & outfits</li>
+                    <li>Editing on 150+ photos</li>
+                    <li>Digital image transfer & download</li>
+                    <li>Printing & posting rights on all images</li>
+                </ul>
+            <hr style="margin-top: 42px; border-color: #fefefe; border-width: 1px;">
+            <a href="{% url 'calendar' %}"><button class="custom-btn btn-2" style="width: 212px; margin-top: 22px;"><strong>View Available Dates</strong></button></a>
+        </div>
+    </main>
+
+{% endblock %}

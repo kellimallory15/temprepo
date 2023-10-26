@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="html">
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for session in sessions_in_cart %}
+            <li>{{ session.name }} - ${{ session.price }}</li>
+        {% empty %}
+            <li>Your cart is empty.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
